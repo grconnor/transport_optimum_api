@@ -14,6 +14,7 @@ group :development, :test do
   gem "pry-rails"
   gem "shoulda-matchers"
   gem "factory_bot_rails"
+  gem "devise_token_auth"
   gem 'coveralls',  require:  false
 end
 
