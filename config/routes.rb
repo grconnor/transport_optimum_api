@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'prices/index'
   get 'distance/index'
   get 'price/index'
   get 'price/update_price'
@@ -7,8 +8,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do 
-      resources :price, only: [:index, :update_price]
-      resources :distance, only: [:index]
+      resources :prices, only: [:create]
     end
   end
 end

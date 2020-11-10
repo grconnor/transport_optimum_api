@@ -1,41 +1,19 @@
-# require "rails_helper"
+RSpec.describe 'POST /api/v1/prices', type: :request do
 
-# RSpec.describe 'POST /api/v1/price', type: :request do
-
-#   describe 'test' do
-
-#     it 'returns 202 distance' do
-#       expect(distance).to eq 202
-#     end
-
-#     it 'calculates the correct price' do
-#       expect().
-#     end
-    
-#   end
-# end
-
-RSpec.describe 'POST /api/v1/calculations', type: :request do
-
-  describe 'with valid credentials' do
+  describe 'Calculation of total price' do
     before do
-      post '/api/v1/calculations',
+      post '/api/v1/prices',
           params: {
-            distance: 202000,
+            distance: 201561,
           }
     end
 
-    it 'returns 202 distance' do
-      expect(distance).to eq 202000
+    it 'returns a 201 response status' do
+      expect(response).to have_http_status 201
     end
 
-    it 'calculates the correct price' do
-      expect().
+    it 'returns correct distance' do
+      expect(response_json).to eq 350
     end
-
-    it 'returns 200 response status' do
-      expect(response).to have_http_status 200
-    end
-
   end
 end
