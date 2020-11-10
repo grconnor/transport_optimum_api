@@ -8,12 +8,12 @@ RSpec.describe 'POST /api/v1/prices', type: :request do
           }
     end
 
-    it 'returns a 201 response status' do
-      expect(response).to have_http_status 201
+    it 'returns a 20 response status' do
+      expect(response).to have_http_status 200
     end
 
-    it 'returns correct distance' do
-      expect(response_json).to eq 350
+    it 'returns correct calculation' do
+      expect(JSON.parse(response.body)["prices"]).to eq 1005
     end
   end
 end
