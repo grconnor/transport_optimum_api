@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :request do
-    distance { "MyString" }
+    distance { "202 km" }
   end
 end
