@@ -3,12 +3,10 @@ class Api::V1::PricesController < ApplicationController
   def create
     pricePerKm = 5 
     distanceString = params[:distance]
-    distanceInMeters = (params[:distance].to_i)/1000
+    distanceInKm = (params[:distance].to_i)/1000
 
-    totalPrice = (distanceInMeters)*(pricePerKm)
+    totalPrice = (distanceInKm)*(pricePerKm)
 
-    parsedTotalPrice = totalPrice
-
-    render json: { prices: totalPrice }
+    render json: { price: totalPrice }
   end
 end
