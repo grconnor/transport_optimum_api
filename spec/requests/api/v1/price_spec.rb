@@ -13,7 +13,7 @@ RSpec.describe 'POST /api/v1/prices', type: :request do
     end
 
     it 'returns correct calculation' do
-      expect(JSON.parse(response.body)["prices"]).to eq 1005
+      expect(JSON.parse(response.body)["price"]).to eq 1005
     end
   end
 end
