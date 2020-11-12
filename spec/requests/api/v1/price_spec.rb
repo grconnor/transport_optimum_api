@@ -8,7 +8,7 @@ RSpec.describe 'POST /api/v1/prices', type: :request do
           }
     end
 
-    it 'returns a 20 response status' do
+    it 'returns a 200 response status' do
       expect(response).to have_http_status 200
     end
 
